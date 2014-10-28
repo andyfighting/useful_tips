@@ -39,7 +39,6 @@ char * cpuid()
     return cpuid_str;
 }
 
-
 int main()
 {
 	printf("cpu id %s\n",cpuid());
