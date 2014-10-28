@@ -25,18 +25,17 @@
 
 char * cpuid()
 {
-	static char cpuid_str[32]={0};
+    static char cpuid_str[32]={0};
     unsigned int eax,ebx,ecx,edx;
     __cpuid__(0,eax,ebx,ecx,edx);
     eax &= 0xffff;
-    if (eax < 3)
-    {
+    if (eax < 3) {
     	sprintf(cpuid_str,"0000000000000000");
     	return cpuid_str;
-
     }
-	__cpuid__(1,eax,ebx,ecx,edx);
-	snprintf(cpuid_str,32,"%08X%08X", ntohl(eax),ntohl(edx));
+    __cpuid__(1,eax,ebx,ecx,edx);
+    snprintf(cpuid_str,32,"%08X%08X", ntohl(eax),ntohl(edx));
+    
     return cpuid_str;
 }
 
