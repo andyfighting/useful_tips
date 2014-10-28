@@ -27,6 +27,7 @@ char * cpuid()
 {
     static char cpuid_str[32]={0};
     unsigned int eax,ebx,ecx,edx;
+    
     __cpuid__(0,eax,ebx,ecx,edx);
     eax &= 0xffff;
     if (eax < 3) {
