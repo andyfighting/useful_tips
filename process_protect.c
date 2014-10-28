@@ -13,10 +13,8 @@ int process_exists()
 
     fd = open(PROCESS_PID, O_RDWR | O_CREAT, S_IRWXU | S_IRWXG | S_IRWXO);
     if (fd < 0)
-    {
         return 0;
-    }
-
+        
     lock.l_type   = F_WRLCK;
     lock.l_whence = SEEK_SET;
     lock.l_start  = 0;
@@ -35,7 +33,6 @@ int process_exists()
     return 0;
 }
 
-
 int main(int argc,char *argv[])
 {
 	int i = 0;
@@ -50,5 +47,6 @@ int main(int argc,char *argv[])
 		sleep(1);
 		i++;
 	}
+	
 	return 0;
 }
