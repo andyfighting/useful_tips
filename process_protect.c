@@ -20,8 +20,7 @@ int process_exists()
     lock.l_start  = 0;
     lock.l_len    = 0;
 
-    if (fcntl(fd, F_SETLK, &lock) != 0)
-    {
+    if (fcntl(fd, F_SETLK, &lock) != 0) {
         close(fd);
         return 1;
     }
